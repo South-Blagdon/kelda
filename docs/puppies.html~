@@ -1,0 +1,199 @@
+<html>
+<head>
+<?php 
+  if ( $_COOKIE['frame'] != "1" ) {
+    header("Location: http://www.lakeland-terrier.org");
+  }
+?>
+<title>Puppies</title>
+</head>
+
+<body bgcolor="#C0DCC0">
+<h1 align="center">Kelda Lakeland Terrier Puppies
+</h1>
+<table width="96%" border="0">
+  <tr>
+    <td height="283" colspan="2"><div align="center">
+      <table width="28%" height="262" border="10">
+          <tr>
+            <td height="213"><img src="puppies-bw.gif" width="336" height="197" border="0"></td>
+          </tr>
+          <tr>
+            <td height="23" bgcolor="#FFFFFF"><div align="center">two kelda puppies
+                one 7 weeks one 8 weeks</div>
+            </td>
+          </tr>
+          </table>
+    </div></td>
+  </tr>
+  <tr>
+    <td height="283" colspan="2"><div align="center">
+      <table width="42%" border="10">
+        <tr>
+          <td><a href="puppies-cup-large.jpg"><img src="puppies-cup-small.jpg" width="512" height="265" border="0"></a></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFFFF"><div align="center">2 weeks old</div></td>
+        </tr>
+      </table>
+    </div></td>
+  </tr>
+  <tr>
+    <td width="49%" height="389"><div align="center">
+      <table width="62%" border="10">
+          <tr>
+            <td><img src="puppies-asenath.jpeg" width="182" height="277" border="0"></td>
+            <td bgcolor="#FFFFFF">Six Kelda Lakeland terrier
+                puppies at 7 days old. The lighter puppy's colouring is called &quot;liver &amp; tan&quot;,
+                Lakelands of this colouring are fairly rare as both parents have
+                to have liver &amp; tan colouring in their genes</td>
+          </tr>
+          </table>
+    </div></td>
+    <td width="51%"><table width="22%" border="10" align="center">
+      <tr>
+        <td><img src="puppies-pail.jpeg" width="300" height="303" border="0"></td>
+      </tr>
+      <tr>
+        <td height="23" bgcolor="#FFFFFF"><div align="center">3 red puppies and
+            2 black &amp; tan</div>
+        </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td><div align="center">
+      <table width="51%" border="10">
+          <tr>
+            <td><a href="puppies-fudge2-large.jpg"><img src="puppies-fudge2-small.jpg" width="288" height="216" border="0"></a></td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF"><div align="center">cat lecturing puppies</div></td>
+          </tr>
+      </table>
+    </div></td>
+    <td><div align="center">
+      <table width="48%" border="10">
+          <tr>
+            <td><a href="puppies-fudge-large.jpg"><img src="puppies-fudge-small.jpg" width="288" height="216" border="0"></a></td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF"><div align="center">attentive pupils</div></td>
+          </tr>
+      </table>
+    </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">
+      <table width="50%" border="10">
+          <tr>
+            <td><a href="puppy-kitten-romp3-large.jpg"><img src="puppy-kitten-romp3-small.jpg" width="288" height="216" border="0"></a></td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF"><div align="center">race you!</div></td>
+          </tr>
+      </table>
+    </div></td>
+    <td><div align="center">
+      <table width="48%" border="10">
+          <tr>
+            <td><a href="puppy-paw-large.jpg"><img src="puppy-paw-small.jpg" width="288" height="216" border="0"></a></td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF"><div align="center">&quot;shall we do it this way?&quot;</div></td>
+          </tr>
+      </table>
+    </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">
+      <table width="39%" border="10">
+          <tr>
+            <td><a href="puppy-grass-large.jpg"><img src="puppy-grass-small.jpg" width="216" height="288" border="0"></a></td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF"><div align="center">I'm cute!</div></td>
+          </tr>
+      </table>
+    </div></td>
+    <td><div align="center">
+      <table width="38%" border="10">
+          <tr>
+            <td><a href="dafodil-large.jpg"><img src="dafodil-small.jpg" width="216" height="288" border="0"></a></td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF"><div align="center">one black &amp; tan and one
+                red puppy</div></td>
+          </tr>
+      </table>
+    </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">
+      <table width="51%" border="10">
+          <tr>
+            <td><a href="puppy-kitten-romp2-large.jpg"><img src="puppy-kitten-romp2-small.jpg" width="288" height="216" border="0"></a></td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF"><div align="center">Fudge the cat says &quot;so which
+                are my kittens!&quot;</div></td>
+          </tr>
+      </table>
+    </div></td>
+    <td><div align="center">
+      <table width="48%" border="10">
+          <tr>
+            <td><a href="puppy-kitten-romp-large.jpg"><img src="puppy-kitten-romp-small.jpg" width="288" height="216" border="0"></a></td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF"><div align="center">well can you spot the difference?</div></td>
+          </tr>
+      </table>
+    </div></td>
+  </tr>
+</table>
+
+<div align="center">
+  <table width="25%" border="0">
+    <tr>
+      <td><table width="22%" border="10" align="center">
+        <tr>
+	          <td><a href="daisy1-large.jpg"><img src="daisy1-small.jpg" width="235" height="321" border="0"></a></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFFFF"><div align="center">One of our Lakelands
+             just after having won best puppy, also overall best in show and
+             Asenath won best young handler</div></td>
+        </tr>
+      </table></td>
+    </tr>
+    <tr>
+      <td><table width="37%" border="10">
+        <tr>
+          <td><img src="primrose.jpg" width="304" height="241"></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFFFF"><div align="center">Another Kelda lakeland
+              her specialties are: going for car rides and playing in water
+              and being a special companion for a 4 year old boy.</div></td>
+        </tr>
+      </table></td>
+    </tr>
+    <tr>
+      <td><div align="center">
+        <table width="37%" border="10">
+            <tr>
+              <td><a href="primrose-puppy-large.jpg"><img src="primrose-puppy-small.jpg" width="288" height="216" border="0"></a></td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF"><div align="center">A Kelda puppy
+                now living in Cornwall, UK </div></td>
+            </tr>
+        </table>
+      </div></td>
+    </tr>
+  </table>
+</div>
+  
+</body>
+</html>

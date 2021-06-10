@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>Holly</title>
+</head>
+
+<body bgcolor="#C0DCC0">
+<h1 align=center>Holly</h1>
+<table width="89%" border="0" align="center">
+  <tr>
+    <td>
+      <div align="center">
+        <table width="33%" height="295" border="10">
+            <tr>
+              <td><a href="holly1-large.jpg"><img src="holly1-small.jpg" width="373" height="262" border="0"></a></td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF"><div align="center">Holly at the Lakeland
+                  Millenium Show in Kirby Longsdale</div></td>
+            </tr>
+        </table>
+      </div>
+    </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">
+      <table width="29%" border="10">
+          <tr>
+            <td><a href="holly2-large.jpg"><img src="holly2-small.jpg" width="321" height="250" border="0"></a></td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF"><div align="center">Holly at Crufts</div></td>
+          </tr>
+      </table>
+    </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">
+      <table width="29%" border="10">
+          <tr>
+            <td><a href="holly3-large.jpg"><img src="holly3-small.jpg" width="321" height="250" border="0"></a></td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF"><div align="center">Holly with her puppies</div></td>
+          </tr>
+      </table>
+    </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">
+      <table width="29%" border="10">
+          <tr>
+            <td><img src="daffodil.jpg" width="419" height="286" border="0"></td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF"><div align="center">companions</div></td>
+          </tr>
+      </table>
+    </div></td>
+  </tr>
+</table>
+</body>
+</html>
