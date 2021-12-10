@@ -1,21 +1,32 @@
 <div class="sidebar">
     <h4>Kelda Lakelands</h1>
-    <img src="{{ site.image.path }}union-jack.gif">
-    <a class="active" href="/">Home page</a>
-    <a href="/kelda/about">About Kelda</a>
-    <a href="/kelda/puppies" Gallery-&gt;Puppies</a>
-        <a href="/kelda/poppy">Gallery-&gt;Poppy &amp; others</a>
-        <a href="/kelda/douglas">Gallery-&gt;Douglas</a>
-        <a href="/kelda/agility">Gallery-&gt;Agility</a>
-        <a href="/kelda/puppy-care">Your new puppy</a>
-        <a href="/kelda/grooming">Grooming</a>
-        <a href="/kelda/faq">FAQ</a>
-        <a href="/kelda/history">Kelda History</a>
-        <a href="/kelda/origin">Lakeland History</a>
-        <a href="/kelda/standard">Breed Standard</a>
-        <a href="/kelda/contact">Contact</a>
-        <a href="/kelda/testimonial">Testimonials</a>
-        <a href="/kelda/links">Links.</a>
+        {% if page.pageId=="home" %}
+        {% set kelda = "kelda/" %}
+        {% set homep = '' %}
+        {% else %}
+        {% set kelda = '' %}
+        {% set homep = '../' %}
+        {% endif %}
+        <img src="{{ site.image.path }}union-jack.gif">
+        <a {% if page.pageId=="home" %}class="active" {% endif %}href="{{ homep }}">Home page</a>
+        <a {% if page.filename=="about" %}class="active" {% endif %} href="{{ kelda }}about">About Kelda</a>
+        <a {% if page.pageId=="puppies" %}class="active" {% endif %} href="{{ kelda }}puppies" Gallery-&gt;Puppies</a>
+            <a {% if page.filename=="poppy" %}class="active" {% endif %} href="{{ kelda }}poppy">Gallery-&gt;Poppy &amp;
+                others</a>
+            <a {% if page.filename=="douglas" %}class="active" {% endif %} href="{{ kelda }}douglas">Gallery-&gt;Douglas</a>
+            <a {% if page.filename=="agility" %}class="active" {% endif %} href="{{ kelda }}agility">Gallery-&gt;Agility</a>
+            <a {% if page.filename=="puppy-care" %}class="active" {% endif %} href="{{ kelda }}puppy-care">Your new
+                puppy</a>
+            <a {% if page.filename=="grooming" %}class="active" {% endif %} href="{{ kelda }}grooming">Grooming</a>
+            <a {% if page.filename=="faq" %}class="active" {% endif %} href="{{ kelda }}faq">FAQ</a>
+            <a {% if page.filename=="history" %}class="active" {% endif %} href="{{ kelda }}history">Kelda History</a>
+            <a {% if page.filename=="origin" %}class="active" {% endif %} href="{{ kelda }}origin">{{ page.filename
+                }}Lakeland History</a>
+            <a {% if page.filename=="standard" %}class="active" {% endif %} href="{{ kelda }}standard">Breed Standard</a>
+            <a {% if page.filename=="contact" %}class="active" {% endif %} href="{{ kelda }}contact">Contact</a>
+            <a {% if page.filename=="testimonial" %}class="active" {% endif %}
+                href="{{ kelda }}testimonial">Testimonials</a>
+            <a {% if page.filename=="links" %}class="active" {% endif %} href="{{ kelda }}links">Links.</a>
 
 </div>
 <!-- <font color="#FFFFFF">&nbsp;lakeland terrier lakeland terrier pets lakeland
