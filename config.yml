@@ -1,0 +1,36 @@
+title: 'Welcome to Kelda'
+description: 'A site created for Kelda dogs'
+logo: spresso-logo.png
+url: ''
+parsedown_actived: true
+comments:
+    enabled: false
+    disqus_shortname: ''
+author:
+    name: 'jmnc2'
+    twitter: null
+    github: 'https://github.com/South-Blagdon/kelda/tree/develop'
+    bitbucket: null
+    facebook: null
+    linkedin: null
+    gplus: null
+    youtube: null
+collections:
+    posts: { output: false }
+    projects: { output: false }
+feed:
+    max_item: 10
+open_graph:
+    locale: en_GB
+code_highlight: true
+google_verify: null
+bing_verify: null
+image:
+    path: '/assets/images/'
+top_menu:
+    - { name: Home, url: / }
+    - { name: Projects, url: /projects }
+bottom_menu:
+    - { name: 'Go to the Spresso theme webpage', url: 'https://github.com/yosymfony/Spress-theme-spresso' }
+themes:
+    name: spress/spress-theme-spresso

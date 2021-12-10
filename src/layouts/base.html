@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include 'head.html' %}
+  </head>
+
+  <body>
+    {% include 'sidebar.html' %}
+
+    <div class="container content spresso-wrap">
+      {% block content %} {{ page.content }} {% endblock %}
+    </div>
+
+    <footer id="footer">
+      <div class="container">
+        <p class="text-center">
+          &copy; {{ 'now' | date('Y') }} {{ site.author.name }}.
+        </p>
+      </div>
+       {% block javascript %}{% endblock %}
+    </footer>
+  </body>
+</html>

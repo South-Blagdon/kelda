@@ -1,0 +1,10 @@
+{
+    "name": "vendor-name/package-name",
+    "description": "",
+    "keywords": ["spress", "theme"],
+    "type": "spress-theme",
+        "require": {
+                "spress/spress-theme-spresso": "*"
+            },
+        "minimum-stability": "dev"
+}

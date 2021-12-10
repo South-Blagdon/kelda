@@ -1,0 +1,107 @@
+[
+    {
+        "name": "spress/spress-installer",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/spress/spress-installer.git",
+            "reference": "ed31aa40817b133e4c19e5bf6224f343cf959275"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/spress/spress-installer/zipball/ed31aa40817b133e4c19e5bf6224f343cf959275",
+            "reference": "ed31aa40817b133e4c19e5bf6224f343cf959275",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0"
+        },
+        "replace": {
+            "yosymfony/spress-installer": "self.version"
+        },
+        "require-dev": {
+            "composer/composer": "^1.0"
+        },
+        "time": "2017-02-11T12:01:38+00:00",
+        "type": "composer-plugin",
+        "extra": {
+            "class": "Yosymfony\\Spress\\Composer\\SpressPlugin",
+            "branch-alias": {
+                "dev-master": "2.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Yosymfony\\Spress\\Composer\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Victor Puertas",
+                "email": "vpgugr@gmail.com",
+                "homepage": "http://yosymfony.com"
+            }
+        ],
+        "description": "Installer for Spress addons",
+        "keywords": [
+            "installer",
+            "plugins",
+            "spress",
+            "themes"
+        ]
+    },
+    {
+        "name": "spress/spress-theme-spresso",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/spress/spress-theme-spresso.git",
+            "reference": "dfc1f183e7b86c5bdf5aabd026b77b14a7972ef6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/spress/spress-theme-spresso/zipball/dfc1f183e7b86c5bdf5aabd026b77b14a7972ef6",
+            "reference": "dfc1f183e7b86c5bdf5aabd026b77b14a7972ef6",
+            "shasum": ""
+        },
+        "require": {
+            "spress/spress-installer": "~2.1"
+        },
+        "replace": {
+            "yosymfony/spress-theme-spresso": "self.version"
+        },
+        "time": "2017-09-02T15:01:36+00:00",
+        "type": "spress-theme",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Victor Puertas",
+                "email": "vpgugr@gmail.com",
+                "homepage": "http://yosymfony.com"
+            }
+        ],
+        "description": "Spresso theme for Spress",
+        "keywords": [
+            "bootstrap",
+            "spress",
+            "template",
+            "theme"
+        ]
+    }
+]
