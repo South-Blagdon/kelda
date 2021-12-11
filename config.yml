@@ -26,7 +26,7 @@ code_highlight: true
 google_verify: null
 bing_verify: null
 image:
-    path: '../assets/images/'
+    path: '../../assets/images/'
     path2: 'assets/images/'
 top_menu:
     - { name: Home, url: / }
