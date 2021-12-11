@@ -4,8 +4,8 @@
         {% set kelda = "kelda/" %}
         {% set homep = '' %}
         {% else %}
-        {% set kelda = '' %}
-        {% set homep = '../' %}
+        {% set kelda = '../' %}
+        {% set homep = '../../' %}
         {% endif %}
         <img src="{{ homep }}{{ site.image.path2 }}union-jack.gif">
         <a {% if page.pageId=="home" %}class="active" {% endif %}href="{{ homep }}">Home page</a>
