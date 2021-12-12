@@ -1,0 +1,42 @@
+{
+    "name": "spress/spress-installer",
+    "description": "Installer for Spress addons",
+    "type": "composer-plugin",
+    "keywords": ["spress", "installer", "themes", "plugins"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Victor Puertas",
+            "email": "vpgugr@gmail.com",
+            "homepage": "http://yosymfony.com"
+        }
+    ],
+    "require": {
+        "composer-plugin-api": "^1.0"
+    },
+    "require-dev": {
+        "composer/composer": "^1.0"
+    },
+    "replace": {
+        "yosymfony/spress-installer": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yosymfony\\Spress\\Composer\\": "src/"
+        }
+    },
+    "extra": {
+        "class": "Yosymfony\\Spress\\Composer\\SpressPlugin",
+        "branch-alias": {
+            "dev-master": "2.1-dev"
+        }
+    },
+    "archive": {
+        "exclude": [
+            "tests",
+            "phpunit.xml.dist",
+            ".travis.yml",
+            ".gitignore"
+        ]
+    }
+}

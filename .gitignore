@@ -1,3 +1,7 @@
 # backups
 *~
 git-secrets*
+DEAD*
+doc
+_site
+build/
