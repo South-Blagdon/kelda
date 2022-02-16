@@ -11,8 +11,20 @@ all :
 	cp -ur build/assets/css/style.css docs/assets/css
 	cp -u build/*.html build/favicon.ico docs/
 	git add .
-	git commit -m 'fixing html paths'
+	git commit -m 'fixing html'
 	git push
+
+build:
+	spress site:build
+
+server:
+	spress site:build --server --watch
+
+push:
+	git add .
+	git commit -m 'fixing html'
+	git push
+
 
 clean:
 	rm -rf docs/assets
