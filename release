@@ -1,2 +1,7 @@
+version 2.0.0
+Got rid of the frames and added the menu to each html file instead
+as was having a problem with the iner frame html file being linked by
+google directly and so ending up with no menu.
+
 version 1.0.0
 fist use of git flow to keep track of release etc.
