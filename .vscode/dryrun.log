@@ -1,0 +1,17 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/jmnc2/Documents/doc/Web_pages/kelda_www'
+spress site:build
+mkdir -pv docs/kelda
+cp -ur build/kelda/* docs/kelda/
+cp -ur build/404 docs
+mkdir -pv docs/assets/images
+mv -u build/assets/*.pdf docs/assets
+cp -ur build/assets/images/* docs/assets/images
+mkdir -pv docs/assets/css
+cp -ur build/assets/css/style.css docs/assets/css
+cp -u build/*.html build/favicon.ico docs/
+git add .
+git commit -m 'fixing html'
+git push
+make: Leaving directory '/home/jmnc2/Documents/doc/Web_pages/kelda_www'
+ 
