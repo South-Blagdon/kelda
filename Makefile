@@ -1,31 +1,18 @@
+HTML_FILES := $(wildcard html/*.html)
 
-all :
-	spress site:build
-	mkdir -pv docs/kelda
-	cp -ur build/kelda/* docs/kelda/
-	cp -ur build/404 docs
-	mkdir -pv docs/assets/images
-	mv -u build/assets/*.pdf docs/assets
-	cp -ur build/assets/images/* docs/assets/images
-	mkdir -pv docs/assets/css
-	cp -ur build/assets/css/style.css docs/assets/css
-	cp -u build/*.html build/favicon.ico docs/
-	git add .
-	git commit -m 'fixing html'
-	git push
+.PHONY: build
 
-build:
-	spress site:build
+build: $(HTML_FILES)
+	@echo "Building static pages..."
+	@mkdir -pv build/kelda
+	@mkdir -pv build/kelda/assets/images
+	@mkdir -pv build/kelda/assets/css
+	@php build.php
+	@cp -ur src/content/assets/images/* build/kelda/assets/images/
+	@cp -urv src/content/assets/css/*.css build/kelda/assets/css/
 
-server:
-	spress site:build --server --watch
-
-push:
-	git add .
-	git commit -m 'fixing html'
-	git push
-
-
+debuge:
+	@cp -ur build/kelda/* /srv/http/kelda/
 clean:
 	rm -rf docs/assets
 	rm -rf docs/kelda

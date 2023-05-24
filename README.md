@@ -3,9 +3,13 @@ Lakeland Terriers web page.
 
 The html files etc for the web page.
 
-Using Spress for the Twig template engine to add the menu, header & footer etc for each page https://spress.yosymfony.com/docs/how-it-works/
+This uses twig templates so php and composer will need to be installed to build the web pages
 
-Guess I could of just used make to cat all the files together but if you ever want to move to Symphony this will be a lot of the way there. :)
+I not sure if 'vendor/' should be added to the .gitignore if it will be used in a github action?
+
+```
+composer require "twig/twig:^3.0"
+```
 
 ## Add a rewrite rule to the apache setup:
 ```

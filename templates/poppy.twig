@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% set pageId = "poppy" %}
+
+{% block body %}
+    include '%html_path%%pageId%about.html'
+    {{ source( "html/#{ pageId }/index.html" ) }}
+
+    <pre>
+    {{ dump() }}
+</pre>
+{% endblock %}

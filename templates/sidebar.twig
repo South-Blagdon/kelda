@@ -1,0 +1,33 @@
+<nav class="sidebar">
+	<h4>Kelda Lakelands</h1>
+	{# {% if pageId=="home" %} #}
+	{% set kelda = "" %}
+
+	{% set homep = '' %}
+	{# {% else %}
+	        {% set kelda = '../' %}
+	        {% set homep = '../../' %}
+	        {% endif %} #}
+	{# <p>pageId = {{ pageId }}</p> #}
+	<img src="{{ site_image_path2 }}union-jack.gif"> <a {% if pageId=="home" %} class="active" {% endif %} href="{{ homep }}index.html">Home page</a>
+	<a {% if pageId=="about" %} class="active" {% endif %} href="{{ kelda }}about.html">About Kelda</a>
+	<aGallery-&gt;PoppyGallery-&gt;Douglas</a {% if pageId=="puppies" %} class="active" {% endif %} href="{{ kelda }}puppies.html" gallery-&gt;puppies </a> <a {% if pageId=="poppy" %}class="active" {% endif %} href="{{ kelda }}poppy.html"> &amp; others</a> <a {% if pageId=="douglas" %}class="active" {% endif %} href="{{ kelda }}douglas.html">>
+		<a {% if pageId=="agility" %} class="active" {% endif %} href="{{ kelda }}agility.html">Gallery-&gt;Agility</a>
+		<a {% if pageId=="puppy-care" %} class="active" {% endif %} href="{{ kelda }}puppy-care.html">Your new
+			                puppy</a>
+		<a {% if pageId=="grooming" %} class="active" {% endif %} href="{{ kelda }}grooming.html">Grooming</a>
+		<a {% if pageId=="faq" %} class="active" {% endif %} href="{{ kelda }}faq.html">FAQ</a>
+		<a {% if pageId=="history" %} class="active" {% endif %} href="{{ kelda }}history.html">Kelda History</a>
+		<a {% if pageId=="origin" %} class="active" {% endif %} href="{{ kelda }}origin.html">{{ pageId
+                }}Lakeland History</a>
+		<a {% if pageId=="standard" %} class="active" {% endif %} href="{{ kelda }}standard.html">Breed Standard</a>
+		<a {% if pageId=="contact" %} class="active" {% endif %} href="{{ kelda }}contact.html">Contact</a>
+		<a {% if pageId=="testimonial" %} class="active" {% endif %} href="{{ kelda }}testimonial.html">Testimonials</a>
+		<a {% if pageId=="links" %} class="active" {% endif %} href="{{ kelda }}links.html">Links.</a>
+
+	</nav>
+	<!-- <font color="#FFFFFF">&nbsp;lakeland terrier lakeland terrier pets lakeland
+	        terrier breeders lakeland terrier lake land terrier lakeland terriers</font>
+	        <br><font color="#FFFFFF">&nbsp;lakeland terrier lakeland terrier pets
+	        lakeland terrier breeders lakeland terrier lake land terrier lakeland terriers</font>
+	        <br><font color="#FFFFFF">&nbsp; lakeland terrier lakeland terrier pets -->

@@ -5,3 +5,5 @@ DEAD*
 doc
 _site
 build/
+old_spress_code
+vendor

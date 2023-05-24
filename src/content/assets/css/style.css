@@ -4,13 +4,15 @@ table {
   color: blue;
   text-align: center;
   border-color: #000000;
-  border-style:none;
+  border-style: none;
   border-width: 0px;
 }
+
 .inertable {
   border-width: 10px;
-  border-style:outset;
+  border-style: outset;
 }
+
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
@@ -25,6 +27,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .sidebar {
   margin: 0;
   padding: 0;
@@ -64,9 +67,11 @@ div.content {
     height: auto;
     position: relative;
   }
+
   .sidebar a {
     float: left;
   }
+
   div.content {
     margin-left: 0;
   }
@@ -90,6 +95,17 @@ h2 {
   text-shadow: 10px 10px 20px red;
   color: Crimson;
 }
+
 h2 {
   text-align: center;
+}
+
+.legal-list {
+  display: inline;
+  padding-left: 0;
+}
+
+.legal-list li {
+  display: inline-block;
+  margin-right: 10px;
 }

@@ -4,27 +4,50 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd87c74577f5efc8369fbba7ca002b71f
+class ComposerStaticInita974ae3ee5d57e409832c8cb9901c6d0
 {
+    public static $files = array (
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
-        'Y' => 
+        'T' => 
         array (
-            'Yosymfony\\Spress\\Composer\\' => 26,
+            'Twig\\' => 5,
+        ),
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Yosymfony\\Spress\\Composer\\' => 
+        'Twig\\' => 
         array (
-            0 => __DIR__ . '/..' . '/spress/spress-installer/src',
+            0 => __DIR__ . '/..' . '/twig/twig/src',
         ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+    );
+
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd87c74577f5efc8369fbba7ca002b71f::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd87c74577f5efc8369fbba7ca002b71f::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita974ae3ee5d57e409832c8cb9901c6d0::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita974ae3ee5d57e409832c8cb9901c6d0::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInita974ae3ee5d57e409832c8cb9901c6d0::$classMap;
 
         }, null, ClassLoader::class);
     }
