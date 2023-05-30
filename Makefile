@@ -11,7 +11,8 @@ build: $(HTML_FILES)
 	@cp -ur src/content/assets/images/* build/kelda/assets/images/
 	@cp -urv src/content/assets/css/*.css build/kelda/assets/css/
 
-debuge:
+debug:
+	@php -d display_errors=1 -d error_reporting=E_ALL test/test_dir_scan.php
 	@cp -ur build/kelda/* /srv/http/kelda/
 clean:
 	rm -rf docs/assets

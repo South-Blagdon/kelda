@@ -11,6 +11,27 @@ $twig = new \Twig\Environment($loader, [
 $twig->addExtension(new \Twig\Extension\DebugExtension());
 
 $htmlPrefix = 'src/html/';
+function scanDirectory($directory)
+{
+    $items = [];
+
+    $contents = scandir($directory);
+    $contents = array_diff($contents, ['.', '..']);
+
+    foreach ($contents as $item) {
+        $path = $directory . '/' . $item;
+        if (is_dir($path)) {
+            $items[$item] = scanDirectory($path);
+        } else {
+            $items[] = $item;
+        }
+    }
+
+    return $items;
+}
+
+$items = scanDirectory($htmlPrefix);
+
 $htmlFiles = glob($htmlPrefix . '{*,*/*}.html', GLOB_BRACE);
 
 foreach ($htmlFiles as $file) {
