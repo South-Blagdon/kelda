@@ -18,3 +18,7 @@ clean:
 	rm -rf docs/assets
 	rm -rf docs/kelda
 	rm -rf build/*
+	
+.PHONY: edit
+edit:
+	code-insiders --extensions-dir="../vscode/insiders/extensions" kelda_www.code-workspace

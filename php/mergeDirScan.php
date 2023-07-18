@@ -9,6 +9,8 @@
 
 function mergeResults(array $newResults, array $existingData): array
 {
+    // echo 'dump $newResults';
+    // var_dump($newResults);
     foreach ($newResults as $item) {
         $directory = $item['directory'];
         $file = $item['file'];
@@ -29,17 +31,25 @@ function mergeResults(array $newResults, array $existingData): array
         // If the file is not found in the existing data, add it
         if (!$found) {
             if ($directory === '') {
-                $sa = $item;
+                $sa = $file; // $item[''];
             } else {
                 $sa = $directory . '.html';
+            }
+            echo "\nnew html page found dump sa: ";
+            var_dump($sa);
+            //echo "dump directory: ";var_dump($directory);
+            if ($saveAs === 'index.html') {
+                $menuItem = 'Home';
+            } else {
+                $menuItem = basename($sa);
             }
             $existingData[] = [
                 'directory' => $directory,
                 'file' => $file,
                 'saveAs' => $saveAs,
-                'enabled' => $enabled,
-                'menuItem' => basename($sa),
+                'menuItem' => $menuItem,
                 'menuNode' => dirname($sa),
+                'enabled' => $enabled,
                 'new' => true
             ];
         }

@@ -1,0 +1,152 @@
+-
+    directory: ''
+    file: index.html
+    saveAs: index.html
+    menuItem: Home
+    menuNode: .
+    enabled: true
+    new: true
+-
+    directory: about
+    file: index.html
+    saveAs: about.html
+    menuItem: about.html
+    menuNode: .
+    enabled: true
+    new: true
+-
+    directory: agility
+    file: index.html
+    saveAs: agility.html
+    menuItem: agility.html
+    menuNode: .
+    enabled: true
+    new: true
+-
+    directory: contact
+    file: index.html
+    saveAs: contact.html
+    menuItem: contact.html
+    menuNode: .
+    enabled: true
+    new: true
+-
+    directory: faq
+    file: index.html
+    saveAs: faq.html
+    menuItem: faq.html
+    menuNode: .
+    enabled: true
+    new: true
+-
+    directory: gallery/daisy
+    file: index.html
+    saveAs: gallery/daisy.html
+    menuItem: daisy.html
+    menuNode: gallery
+    enabled: true
+    new: true
+-
+    directory: gallery/douglas
+    file: index.html
+    saveAs: gallery/douglas.html
+    menuItem: douglas.html
+    menuNode: gallery
+    enabled: true
+    new: true
+-
+    directory: gallery/poppy
+    file: index.html
+    saveAs: gallery/poppy.html
+    menuItem: poppy.html
+    menuNode: gallery
+    enabled: true
+    new: true
+-
+    directory: gallery/puppies
+    file: index.html
+    saveAs: gallery/puppies.html
+    menuItem: puppies.html
+    menuNode: gallery
+    enabled: true
+    new: true
+-
+    directory: gallery/ziggy
+    file: index.html
+    saveAs: gallery/ziggy.html
+    menuItem: ziggy.html
+    menuNode: gallery
+    enabled: true
+    new: true
+-
+    directory: gallery
+    file: null
+    saveAs: gallery/index.html
+    menuItem: gallery.html
+    menuNode: .
+    enabled: true
+    new: true
+-
+    directory: grooming
+    file: index.html
+    saveAs: grooming.html
+    menuItem: grooming.html
+    menuNode: .
+    enabled: true
+    new: true
+-
+    directory: history
+    file: index.html
+    saveAs: history.html
+    menuItem: history.html
+    menuNode: .
+    enabled: true
+    new: true
+-
+    directory: links
+    file: index.html
+    saveAs: links.html
+    menuItem: links.html
+    menuNode: .
+    enabled: true
+    new: true
+-
+    directory: origin
+    file: index.html
+    saveAs: origin.html
+    menuItem: origin.html
+    menuNode: .
+    enabled: true
+    new: true
+-
+    directory: puppy-care
+    file: index.html
+    saveAs: puppy-care.html
+    menuItem: puppy-care.html
+    menuNode: .
+    enabled: true
+    new: true
+-
+    directory: standard
+    file: index.html
+    saveAs: standard.html
+    menuItem: standard.html
+    menuNode: .
+    enabled: true
+    new: true
+-
+    directory: stuff
+    file: index.html
+    saveAs: stuff.html
+    menuItem: stuff.html
+    menuNode: .
+    enabled: true
+    new: true
+-
+    directory: testimonial
+    file: index.html
+    saveAs: testimonial.html
+    menuItem: testimonial.html
+    menuNode: .
+    enabled: true
+    new: true
