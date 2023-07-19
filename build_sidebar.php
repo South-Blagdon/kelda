@@ -116,7 +116,7 @@ function parentNode($node, $lastNode ){
 	else return 0;
 }
 echo "build twig file: $outputFile\n";
-$html =   '<img src="assets/images/union-jack.gif">';
+$html =   '<img src="{{ pathToSiteRoot }}assets/images/union-jack.gif">';
 //<h4>Kelda Lakelands</h4>
 // <p>page id "{{ pageId }}"</p>
 // <p>title "{{ title }}"</p>
@@ -158,7 +158,7 @@ foreach ($menu as $item) {
 		//$html .= "<li><a href='{$saveAs}'>{$menuItem}</a>, File: $file, Save as: $saveAs</li>/n";
 		//$pageid = 'id_' . strtolower($saveAs);
 		$pageid = 'id_' . $saveAs;
-		$html .= "<li><a {% if pageId=='$pageid' %}class='active' {% endif %}href='$saveAs'>$menuItem</a></li>\n";
+		$html .= "<li><a {% if pageId=='$pageid' %}class='active' {% endif %}href='{{ pathToSiteRoot }}$saveAs'>$menuItem</a></li>\n";
 	} else {
 		//$html .= "<li>Directory: $directory, <b><i>No file at this point</i></b>, Save as: $saveAs</li>";
 

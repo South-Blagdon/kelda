@@ -1,6 +1,11 @@
 <?php
+// Enable error reporting
+error_reporting(E_ALL);
 
-require_once __DIR__ . 'php/subDirFuncs.php';
+// Display errors on the screen
+ini_set('display_errors', '1');
+
+require_once __DIR__ . '/php/subDirFuncs.php';
 
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -22,7 +27,7 @@ $twig->addExtension(new \Twig\Extension\DebugExtension());
 
 
 if (file_exists($savedNavMenuFile)) {
-    echo "Found menu config yaml file: $savedNavMenuFile";
+    echo "Found menu config yaml file: $savedNavMenuFile\n";
     // Load file contents
     $fileContents = file_get_contents($savedNavMenuFile);
 
@@ -40,7 +45,7 @@ if (file_exists($savedNavMenuFile)) {
     echo "File not found $.";
     trigger_error("An error occurred. Script halted.", E_USER_ERROR);
 }
-
+$lastMenuNode = '';
 foreach ($menu as $item) {
     $enabled = $item['enabled'];
     if ($enabled === true) {
@@ -49,11 +54,16 @@ foreach ($menu as $item) {
         $saveAs = $item['saveAs']; // build dir file name
         $menuNode = $item['menuNode']; // the node on the tree
         $menuItem = $item['menuItem']; // the name of the page
-        if (!empty($dir)) {
-            $html = file_get_contents($htmlDir . $dir . '/' . $file);
+        if (!empty($dir)) {//We need this if as if $dir is empty we can't add the '/'.
+            $srcFile = $htmlDir . $dir . '/' . $file;
         } else {
-            $html = file_get_contents($htmlDir . $file);
+            $srcFile = $htmlDir . $file;
         }
+        if(is_dir($srcFile)){
+            //TODO: maybe build a .html index file for the sub pages and place it here.
+            continue;
+        }
+        $html = file_get_contents($srcFile);
 
         // Render the HTML file using Twig
         $template = $twig->createTemplate($html);
@@ -63,6 +73,7 @@ foreach ($menu as $item) {
 
         $currentYear = date('Y');
         $pageId = 'id_' . $saveAs;
+        $pathToSiteRoot = getRelativePath($saveAs);
         $rendered = $twig->render('main.twig', [
             'content' => $renderedHtml,
             'title' => "Kelda: $menuItem",
@@ -70,6 +81,7 @@ foreach ($menu as $item) {
             'current_year' => $currentYear,
             'filename' => $saveAs,
             'subdirectory' => $dir,
+            'pathToSiteRoot' => $pathToSiteRoot,
             'pageId' => $pageId,
             'site_image_path2' => 'assets/images/'
         ]);
@@ -78,7 +90,10 @@ foreach ($menu as $item) {
         //     $saveFile = $dir . '/' . $saveFile;
         // }
         $saveFile = 'build/kelda/' . $saveFile;
-        checkSubdirectory('build/kelda/', $saveFile);
+        if ($menuNode !== $lastMenuNode) {
+            checkSubdirectory('build/kelda/', dirname($saveFile));
+            $lastMenuNode = $menuNode;
+        }
         file_put_contents($saveFile, $rendered);
         echo "Build file: $saveFile\n";
     }

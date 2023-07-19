@@ -19,6 +19,17 @@
 */
 
 
+function getRelativePath($string) {
+    $slashCount = substr_count($string, '/');
+    $relativePath = '';
+    
+    for ($i = 0; $i < $slashCount; $i++) {
+        $relativePath .= '../';
+    }
+    
+    return $relativePath;
+}
+
 /**
  * Function to check if a directory exists
  *
@@ -61,13 +72,13 @@ function checkSubdirectory($parentDirectory, $subDirectory) {
     if (isDirectoryExists($parentDirectory) && isSubdirectoryValid($parentDirectory, $subDirectory)) {
         if (!isDirectoryExists($subDirectory)) {
             mkdir($subDirectory, 0777, true);
-            echo "$subDirectory has been created as a subdirectory of $parentDirectory.";
+            echo "$subDirectory has been created as a subdirectory of $parentDirectory.\n";
         } else {
-            echo "$subDirectory already exists as a subdirectory of $parentDirectory.";
+            echo "$subDirectory already exists as a subdirectory of $parentDirectory.\n";
         }
         return true;
     } else {
-        echo "$subDirectory is NOT a subdirectory of $parentDirectory.";
+        echo "$subDirectory is NOT a subdirectory of $parentDirectory.\n";
         return false;
     }
 }
