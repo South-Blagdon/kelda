@@ -21,6 +21,11 @@ build: $(HTML_FILES)
 debug:
 	@php -d display_errors=1 -d error_reporting=E_ALL test/test_dir_scan.php
 	@cp -ur build/kelda/* /srv/http/kelda/
+
+deploy_local:
+	rm -rf /srv/http/kelda/*
+	cp -ur build/kelda/* /srv/http/kelda/
+
 clean:
 	rm -rf docs/assets
 	rm -rf docs/kelda
