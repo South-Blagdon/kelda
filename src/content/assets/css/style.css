@@ -32,10 +32,12 @@ body {
   margin: 0;
   padding: 0;
   width: 200px;
-  background-color: #f1f1f1;
+  background-color: white(350 75% 0%);
   position: fixed;
   height: 100%;
   overflow: auto;
+  list-style-type: none;
+  list-style: none;
 }
 
 .sidebar a {
@@ -43,6 +45,10 @@ body {
   color: black;
   padding: 16px;
   text-decoration: none;
+}
+
+.sidebar ul {
+  list-style-type: none;
 }
 
 .sidebar a.active {
@@ -108,4 +114,8 @@ h2 {
 .legal-list li {
   display: inline-block;
   margin-right: 10px;
+}
+
+.indented-content {
+  padding-left: 20px; /* Adjust the value as needed */
 }

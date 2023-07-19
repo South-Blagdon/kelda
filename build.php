@@ -1,6 +1,16 @@
 <?php
 
+require_once __DIR__ . 'php/subDirFuncs.php';
+
 require_once __DIR__ . '/vendor/autoload.php';
+
+
+// Include the Symfony YAML component
+use Symfony\Component\Yaml\Yaml;
+
+
+$savedNavMenuFile = 'src/config/sideBar.yaml';
+$htmlDir = './src/html/';
 
 $loader = new \Twig\Loader\FilesystemLoader('templates');
 $twig = new \Twig\Environment($loader, [
@@ -10,66 +20,68 @@ $twig = new \Twig\Environment($loader, [
 ]);
 $twig->addExtension(new \Twig\Extension\DebugExtension());
 
-$htmlPrefix = 'src/html/';
-function scanDirectory($directory)
-{
-    $items = [];
 
-    $contents = scandir($directory);
-    $contents = array_diff($contents, ['.', '..']);
+if (file_exists($savedNavMenuFile)) {
+    echo "Found menu config yaml file: $savedNavMenuFile";
+    // Load file contents
+    $fileContents = file_get_contents($savedNavMenuFile);
 
-    foreach ($contents as $item) {
-        $path = $directory . '/' . $item;
-        if (is_dir($path)) {
-            $items[$item] = scanDirectory($path);
-        } else {
-            $items[] = $item;
-        }
+    // Parse YAML into an associative array
+    $currentMenu = Yaml::parse($fileContents);
+    if (!is_array($currentMenu)) {
+        $currentMenu = array();
     }
+    $menu = $currentMenu;
 
-    return $items;
+    // Access the data
+    // Example: Output the value of a specific key
+    //echo $data['keyName'];
+} else {
+    echo "File not found $.";
+    trigger_error("An error occurred. Script halted.", E_USER_ERROR);
 }
 
-$items = scanDirectory($htmlPrefix);
+foreach ($menu as $item) {
+    $enabled = $item['enabled'];
+    if ($enabled === true) {
+        $dir = $item['directory']; //src dir
+        $file = $item['file']; // src file name
+        $saveAs = $item['saveAs']; // build dir file name
+        $menuNode = $item['menuNode']; // the node on the tree
+        $menuItem = $item['menuItem']; // the name of the page
+        if (!empty($dir)) {
+            $html = file_get_contents($htmlDir . $dir . '/' . $file);
+        } else {
+            $html = file_get_contents($htmlDir . $file);
+        }
 
-$htmlFiles = glob($htmlPrefix . '{*,*/*}.html', GLOB_BRACE);
+        // Render the HTML file using Twig
+        $template = $twig->createTemplate($html);
+        $renderedHtml = $template->render([
+            'site_image_path2' => 'assets/images/'
+        ]);
 
-foreach ($htmlFiles as $file) {
-    $html = file_get_contents($file);
-
-    // Render the HTML file using Twig
-    $template = $twig->createTemplate($html);
-    $renderedHtml = $template->render([
-        'site_image_path2' => 'assets/images/'
-    ]);
-
-    $filename = basename($file);
-    $subdirectory = dirname($file);
-    $subdirectory = substr($subdirectory, strlen($htmlPrefix));
-    $currentYear = date('Y');
-    if (!empty($subdirectory)) {
-        $pageId = $subdirectory;
-    } else {
-        $pageId = $subdirectory;
+        $currentYear = date('Y');
+        $pageId = 'id_' . $saveAs;
+        $rendered = $twig->render('main.twig', [
+            'content' => $renderedHtml,
+            'title' => "Kelda: $menuItem",
+            'site_name' => "Kelda",
+            'current_year' => $currentYear,
+            'filename' => $saveAs,
+            'subdirectory' => $dir,
+            'pageId' => $pageId,
+            'site_image_path2' => 'assets/images/'
+        ]);
+        $saveFile = $saveAs;
+        // if (!empty($dir)) {
+        //     $saveFile = $dir . '/' . $saveFile;
+        // }
+        $saveFile = 'build/kelda/' . $saveFile;
+        checkSubdirectory('build/kelda/', $saveFile);
+        file_put_contents($saveFile, $rendered);
+        echo "Build file: $saveFile\n";
     }
-    $rendered = $twig->render('main.twig', [
-        'content' => $renderedHtml,
-        'title' => "Kelda: $subdirectory",
-        'site_name' => "Kelda",
-        'current_year' => $currentYear,
-        'filename' => $filename,
-        'subdirectory' => $subdirectory ,
-        'pageId' => $pageId,
-        'site_image_path2' => 'assets/images/'
-    ]);
-
-    if (!empty($subdirectory)) {
-        $filename = $subdirectory . '.html';
-    }
-
-    file_put_contents('build/kelda/' . $filename, $rendered);
-    echo "Build file ($subdirectory)$filename\n";
 }
 
 ?>
-

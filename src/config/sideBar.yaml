@@ -10,7 +10,7 @@
     directory: about
     file: index.html
     saveAs: about.html
-    menuItem: about.html
+    menuItem: About
     menuNode: .
     enabled: true
     new: true
@@ -18,7 +18,7 @@
     directory: agility
     file: index.html
     saveAs: agility.html
-    menuItem: agility.html
+    menuItem: Agility
     menuNode: .
     enabled: true
     new: true
@@ -26,7 +26,7 @@
     directory: contact
     file: index.html
     saveAs: contact.html
-    menuItem: contact.html
+    menuItem: Contact
     menuNode: .
     enabled: true
     new: true
@@ -34,7 +34,7 @@
     directory: faq
     file: index.html
     saveAs: faq.html
-    menuItem: faq.html
+    menuItem: Faq
     menuNode: .
     enabled: true
     new: true
@@ -42,7 +42,7 @@
     directory: gallery/daisy
     file: index.html
     saveAs: gallery/daisy.html
-    menuItem: daisy.html
+    menuItem: Daisy
     menuNode: gallery
     enabled: true
     new: true
@@ -50,7 +50,7 @@
     directory: gallery/douglas
     file: index.html
     saveAs: gallery/douglas.html
-    menuItem: douglas.html
+    menuItem: Douglas
     menuNode: gallery
     enabled: true
     new: true
@@ -58,7 +58,7 @@
     directory: gallery/poppy
     file: index.html
     saveAs: gallery/poppy.html
-    menuItem: poppy.html
+    menuItem: Poppy
     menuNode: gallery
     enabled: true
     new: true
@@ -66,7 +66,7 @@
     directory: gallery/puppies
     file: index.html
     saveAs: gallery/puppies.html
-    menuItem: puppies.html
+    menuItem: Puppies
     menuNode: gallery
     enabled: true
     new: true
@@ -74,7 +74,7 @@
     directory: gallery/ziggy
     file: index.html
     saveAs: gallery/ziggy.html
-    menuItem: ziggy.html
+    menuItem: Ziggy
     menuNode: gallery
     enabled: true
     new: true
@@ -82,7 +82,7 @@
     directory: gallery
     file: null
     saveAs: gallery/index.html
-    menuItem: gallery.html
+    menuItem: Gallery
     menuNode: .
     enabled: true
     new: true
@@ -90,7 +90,7 @@
     directory: grooming
     file: index.html
     saveAs: grooming.html
-    menuItem: grooming.html
+    menuItem: Grooming
     menuNode: .
     enabled: true
     new: true
@@ -98,7 +98,7 @@
     directory: history
     file: index.html
     saveAs: history.html
-    menuItem: history.html
+    menuItem: History
     menuNode: .
     enabled: true
     new: true
@@ -106,7 +106,7 @@
     directory: links
     file: index.html
     saveAs: links.html
-    menuItem: links.html
+    menuItem: Links
     menuNode: .
     enabled: true
     new: true
@@ -114,7 +114,7 @@
     directory: origin
     file: index.html
     saveAs: origin.html
-    menuItem: origin.html
+    menuItem: Origin
     menuNode: .
     enabled: true
     new: true
@@ -122,7 +122,7 @@
     directory: puppy-care
     file: index.html
     saveAs: puppy-care.html
-    menuItem: puppy-care.html
+    menuItem: Puppy-care
     menuNode: .
     enabled: true
     new: true
@@ -130,7 +130,7 @@
     directory: standard
     file: index.html
     saveAs: standard.html
-    menuItem: standard.html
+    menuItem: Standard
     menuNode: .
     enabled: true
     new: true
@@ -138,15 +138,15 @@
     directory: stuff
     file: index.html
     saveAs: stuff.html
-    menuItem: stuff.html
+    menuItem: Stuff
     menuNode: .
-    enabled: true
+    enabled: false
     new: true
 -
     directory: testimonial
     file: index.html
     saveAs: testimonial.html
-    menuItem: testimonial.html
+    menuItem: Testimonial
     menuNode: .
     enabled: true
     new: true

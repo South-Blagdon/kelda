@@ -41,7 +41,11 @@ function mergeResults(array $newResults, array $existingData): array
             if ($saveAs === 'index.html') {
                 $menuItem = 'Home';
             } else {
-                $menuItem = basename($sa);
+                $menuItem = ucfirst(basename($sa,'.html'));
+                if (substr(strtolower($menuItem), -5) === '.html') {
+                    $menuItem = substr($menuItem, 0, -5);
+                 }
+                 $menuItem = str_replace('_', ' ', $menuItem );
             }
             $existingData[] = [
                 'directory' => $directory,
