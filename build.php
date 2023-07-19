@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 require_once __DIR__ . '/php/subDirFuncs.php';
+require_once __DIR__ . '/php/checkHtml.php';
 
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -54,12 +55,12 @@ foreach ($menu as $item) {
         $saveAs = $item['saveAs']; // build dir file name
         $menuNode = $item['menuNode']; // the node on the tree
         $menuItem = $item['menuItem']; // the name of the page
-        if (!empty($dir)) {//We need this if as if $dir is empty we can't add the '/'.
+        if (!empty($dir)) { //We need this if as if $dir is empty we can't add the '/'.
             $srcFile = $htmlDir . $dir . '/' . $file;
         } else {
             $srcFile = $htmlDir . $file;
         }
-        if(is_dir($srcFile)){
+        if (is_dir($srcFile)) {
             //TODO: maybe build a .html index file for the sub pages and place it here.
             continue;
         }
@@ -94,8 +95,39 @@ foreach ($menu as $item) {
             checkSubdirectory('build/kelda/', dirname($saveFile));
             $lastMenuNode = $menuNode;
         }
-        file_put_contents($saveFile, $rendered);
-        echo "Build file: $saveFile\n";
+        echo "\nBuild file: $saveFile ";
+        //$rendered = tidy_repair_string($rendered);
+
+
+        // Create a new Tidy instance and set the desired options
+        $config = array(
+            'indent' => true,
+            'indent-spaces' => 4,
+            'wrap' => 200,
+            'newline' => 'block-level',
+            // Place links on a new line
+            'show-body-only' => false // Preserve <!DOCTYPE> declaration
+        );
+
+        // Parse and clean the HTML with the custom configuration
+        //$html = '<html><head><title>Hello</title></head><body><h1>Heading</h1><p>This is a paragraph.</p></body></html>';
+        $html = $rendered;
+        $tidyHtml = tidy_parse_string($html, $config);
+        tidy_clean_repair($tidyHtml);
+
+        $tidyHtml = $tidyHtml->html()->value;
+
+        // Add the DOCTYPE back to the cleaned HTML
+        $tidyHtml = "<!DOCTYPE html>\n" . $tidyHtml;
+        //$tidyHtml = $html;
+        $errorMessages = checkHtmlSyntaxErrors($rendered);
+        //$rendered = tidy_clean_repair($rendered);
+        if ($errorMessages !== null) {
+            echo "Syntax errors in the HTML code for file $saveFile :\n" . $errorMessages;
+        } else {
+            echo "No HTML error found.";
+        }
+        file_put_contents($saveFile, $tidyHtml);
     }
 }
 

@@ -1,4 +1,9 @@
+SHELL := /bin/bash
+
 HTML_FILES := $(wildcard html/*.html)
+
+# FLAVOR := $(shell uname -s)
+# LSB_RELEASE := $(shell command -v lsb_release 2> /dev/null)
 
 .PHONY: build
 
@@ -22,7 +27,7 @@ debug:
 	@php -d display_errors=1 -d error_reporting=E_ALL test/test_dir_scan.php
 	@cp -ur build/kelda/* /srv/http/kelda/
 
-deploy_local:
+deploy_local: build
 	rm -rf /srv/http/kelda/*
 	cp -ur build/kelda/* /srv/http/kelda/
 
@@ -36,18 +41,6 @@ edit:
 	code-insiders --extensions-dir="../vscode/insiders/extensions" kelda_www.code-workspace
 
 start_apache:
-	FLAVOR := $(shell uname -s)
-	ifeq ($(FLAVOR), Linux)
-		DISTRIBUTION := $(shell lsb_release -si | sed 's/Linux//')
-		ifeq ($(DISTRIBUTION), Manjaro)
-			sudo systemctl start httpd
-		else ifeq ($(DISTRIBUTION), ManjaroLinux)
-			sudo systemctl start httpd
-		else ifeq ($(DISTRIBUTION), Ubuntu)
-			sudo service apache2 start
-		else
-			@echo "Unsupported distribution: $(DISTRIBUTION)"
-		endif
-	else
-		@echo "Unsupported operating system: $(FLAVOR)"
-	endif
+	@echo "Starting Apache using shell script..."
+	./start_apache.sh
+
