@@ -11,6 +11,20 @@ build_menu:
 	@echo "Building menu..."
 	php build_sidebar.php
 
+copy_assets:
+	@echo ""
+	@echo "Copying assets..."
+
+	@mkdir -pv build/kelda
+	@mkdir -pv build/kelda/assets/images
+	@mkdir -pv build/kelda/assets/css
+	@cp -ur src/content/assets/images/* build/kelda/assets/images/
+	@cp -urv src/content/assets/css/*.css build/kelda/assets/css/
+	@cp -urv src/content/favicon/* build/kelda/
+	@cp -urv src/content/new404.html build/kelda/
+	@cp -urv src/content/.htaccess build/kelda/
+
+
 build: $(HTML_FILES)
 	@echo ""
 	@echo "Building static pages..."
@@ -22,6 +36,10 @@ build: $(HTML_FILES)
 	@php build.php
 	@cp -ur src/content/assets/images/* build/kelda/assets/images/
 	@cp -urv src/content/assets/css/*.css build/kelda/assets/css/
+	@cp -urv src/content/favicon/* build/kelda/
+	@cp -urv src/content/new404.html build/kelda/
+	@cp -urv src/content/.htaccess build/kelda/
+
 
 debug:
 	@php -d display_errors=1 -d error_reporting=E_ALL test/test_dir_scan.php

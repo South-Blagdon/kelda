@@ -20,3 +20,5 @@ RewriteEngine on
 RewriteCond         "%{DOCUMENT_ROOT}/dir1/%{REQUEST_URI}"  -f
 RewriteRule "^(.+)" "%{DOCUMENT_ROOT}/dir1/$1"  [L]
 ```
+## TODO
+* It is kind of a pain to copy the web site to the server, needs
