@@ -1,6 +1,7 @@
 {
     "require": {
         "twig/twig": "^3.0",
-        "symfony/yaml": "^6.2"
+        "symfony/yaml": "^6.2",
+        "ezyang/htmlpurifier": "^4.16.0"
     }
 }

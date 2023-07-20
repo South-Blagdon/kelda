@@ -9,6 +9,7 @@ class ComposerStaticInita974ae3ee5d57e409832c8cb9901c6d0
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -43,6 +44,16 @@ class ComposerStaticInita974ae3ee5d57e409832c8cb9901c6d0
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'H' => 
+        array (
+            'HTMLPurifier' => 
+            array (
+                0 => __DIR__ . '/..' . '/ezyang/htmlpurifier/library',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
@@ -52,6 +63,7 @@ class ComposerStaticInita974ae3ee5d57e409832c8cb9901c6d0
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInita974ae3ee5d57e409832c8cb9901c6d0::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInita974ae3ee5d57e409832c8cb9901c6d0::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInita974ae3ee5d57e409832c8cb9901c6d0::$prefixesPsr0;
             $loader->classMap = ComposerStaticInita974ae3ee5d57e409832c8cb9901c6d0::$classMap;
 
         }, null, ClassLoader::class);

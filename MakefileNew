@@ -46,7 +46,7 @@ deploy_local: build
 	cp -ur $(LOCAL_BUILD_DIR)/* /srv/http/kelda/
 
 # Deployment rule using rsync
-deploy: clean build
+deploy: build
 	rsync -avz --update $(LOCAL_BUILD_DIR)/ $(REMOTE_ALIAS):$(REMOTE_DIR)
 
 clean:

@@ -4,6 +4,6 @@ git-secrets*
 DEAD*
 doc
 _site
-build/*/assets/
+build/*
 old_spress_code
 vendor

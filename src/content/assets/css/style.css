@@ -30,15 +30,16 @@ body {
 
 .sidebar {
   margin: 0;
-  padding: 0;
+  padding: 16px; /* Add a unit of measurement, e.g., px */
   width: 200px;
-  background-color: white(350 75% 0%);
+  background-color: hsl(350, 75%, 0%); /* Add hsl() prefix */
   position: fixed;
-  height: 100%;
+  min-height: 90vh;
+  height: 90%;
   overflow: auto;
-  list-style-type: none;
-  list-style: none;
+  box-sizing: border-box;
 }
+
 
 .sidebar a {
   display: block;
@@ -68,29 +69,6 @@ body {
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
-}
-
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-
-  .sidebar a {
-    float: left;
-  }
-
-  div.content {
-    margin-left: 0;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .sidebar a {
-    text-align: left;
-    float: none;
-  }
 }
 
 h2 {
@@ -146,4 +124,27 @@ p.small-width {
 
 ul {
   margin-left: 2rem;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .sidebar a {
+    float: left;
+  }
+
+  div.content {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar a {
+    text-align: left;
+    float: none;
+  }
 }

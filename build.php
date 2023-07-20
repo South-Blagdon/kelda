@@ -14,7 +14,6 @@ require_once __DIR__ . '/vendor/autoload.php';
 // Include the Symfony YAML component
 use Symfony\Component\Yaml\Yaml;
 
-
 $savedNavMenuFile = 'src/config/sideBar.yaml';
 $htmlDir = './src/html/';
 
