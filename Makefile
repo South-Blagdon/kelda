@@ -62,3 +62,7 @@ start_apache:
 	@echo "Starting Apache using shell script..."
 	./start_apache.sh
 
+install_components:
+	composer require "twig/twig:^3.0"
+
+
