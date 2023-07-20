@@ -32,14 +32,13 @@ body {
   margin: 0;
   padding: 16px; /* Add a unit of measurement, e.g., px */
   width: 200px;
-  background-color: hsl(350, 75%, 0%); /* Add hsl() prefix */
+  background-color: hsl(337, 71%, 77%); /* Add hsl() prefix */
   position: fixed;
   min-height: 90vh;
   height: 90%;
   overflow: auto;
   box-sizing: border-box;
 }
-
 
 .sidebar a {
   display: block;
@@ -63,12 +62,51 @@ body {
 }
 
 .content {
+  flex-grow: 1;
   margin-left: 200px;
   padding: 1px 16px;
-  height: 1000px;
+  height: auto;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+.html_body {
+  margin-left: 200px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.html_body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.content {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Set the main content to flex-grow to fill the available space */
+.content {
+  flex-grow: 1;
+}
+
+.footer-content {
+  flex-shrink: 0; /* Prevent the footer from shrinking */
+  /* background-color: #f0f0f0; */
+  padding: 10px;
+}
+.footer {
+  flex-shrink: 0;
+  background-color: #f0f0f0;
+  padding: 10px;
 }
 
 h2 {
@@ -94,7 +132,6 @@ h1 {
 .centre {
   text-align: center;
 }
-
 
 .legal-list {
   display: inline;
