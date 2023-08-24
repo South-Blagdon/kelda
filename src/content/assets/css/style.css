@@ -148,8 +148,9 @@ h1 {
 }
 
 p {
-  max-width: 80em;
+  max-width: 80vw;
   margin-bottom: 1rem;
+
   /*margin: 0 auto;
   line-height: 1.6;*/
 }
@@ -159,8 +160,24 @@ p.small-width {
   line-height: 1.6;
 }
 
+ul,
+p {
+  max-width: calc(
+    100vw - 3rem - 200px
+  ); /* Adjust the padding value (40px) as needed */
+  float: none;
+}
+
 ul {
-  margin-left: 2rem;
+  margin-left: 1rem;
+  max-width: calc(
+    100vw - 4rem - 200px
+  ); /* Adjust the padding value (40px) as needed */
+
+}
+
+h2 {
+  max-width: calc(100vw - 6rem - 200px); /* Adjust the padding value (40px) as needed */
 }
 
 @media screen and (max-width: 700px) {
@@ -177,11 +194,44 @@ ul {
   div.content {
     margin-left: 0;
   }
+
+  .content {
+    margin-left: 2px;
+  }
+
+  .html_body {
+    margin-left: 2px;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .sidebar a {
     text-align: left;
     float: none;
+  }
+
+  .content {
+    margin-left: 0px;
+  }
+
+  .html_body {
+    margin-left: 0px;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+  ul,
+  p {
+    text-align: left;
+    padding-left: 0px;
+    max-width: calc(
+      100vw - 3rem
+    ); /* Adjust the padding value (40px) as needed */
+    float: none;
+  }
+  h2 {
+    max-width: calc(
+      100vw - 6rem
+    ); /* Adjust the padding value (40px) as needed */
   }
 }
