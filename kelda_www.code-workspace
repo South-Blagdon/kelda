@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../setup_web_1and1"
 		}
 	],
 	"settings": {
